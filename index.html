@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Kanit:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="overlay" id="overlay"></div>
+    <div class="container">
+      <h1 class="title">Todo list</h1>
+      <div class="interaction">
+        <div class="interaction__input">
+          <input class="input" type="text" placeholder="Search note..." />
+          <button class="input__button">
+            <img src="./images/search.svg" alt="search item" />
+          </button>
+        </div>
+        <div class="interaction__buttons">
+          <select
+            class="interaction__select"
+            name="type-tasks"
+            onchange="filterTasks()"
+          >
+            <option value="All" selected>All</option>
+            <option value="Complete">Complete</option>
+            <option value="Incomplete" selected>Incomplete</option>
+          </select>
+          <button class="interaction__theme" onclick="changeTheme()">
+            <img
+              src="./images/dark.svg"
+              alt="change theme"
+              class="interaction__theme--svg"
+            />
+          </button>
+        </div>
+      </div>
+      <div class="empty">
+        <img src="./images/empty.svg" alt="empty list" />
+        <p>Empty...</p>
+      </div>
+      <div class="add-task">
+        <button class="add-task__button" onclick="formAddNewTask()">
+          <img src="./images/add.svg" alt="add a new task" />
+        </button>
+      </div>
+      <div class="list-container">
+        <ul class="list" id="taskList"></ul>
+      </div>
+      <form class="form" id="addTaskForm">
+        <h2>New note</h2>
+        <input
+          type="text"
+          class="form__new-note"
+          placeholder="Input your note..."
+        />
+        <div class="button">
+          <button class="button__cancel" type="menu">Cancel</button>
+          <button
+            class="button__apply"
+            type="button"
+            onclick="submitForm(event)"
+          >
+            Apply
+          </button>
+        </div>
+      </form>
+    </div>
+    <script src="/scripts/app.js"></script>
+  </body>
+</html>
