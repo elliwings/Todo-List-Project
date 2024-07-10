@@ -22,11 +22,7 @@
           </button>
         </div>
         <div class="interaction__buttons">
-          <select
-            class="interaction__select"
-            name="type-tasks"
-            onchange="filterTasks()"
-          >
+          <select class="interaction__select" name="type-tasks">
             <option value="All" selected>All</option>
             <option value="Complete">Complete</option>
             <option value="Incomplete" selected>Incomplete</option>
@@ -36,7 +32,6 @@
               src="./images/dark.svg"
               alt="change theme"
               class="interaction__theme--svg"
-              onclick="changeTheme()"
             />
           </button>
         </div>
@@ -46,7 +41,7 @@
         <p>Empty...</p>
       </div>
       <div class="add-task">
-        <button class="add-task__button" onclick="formAddNewTask()">
+        <button class="add-task__button">
           <img src="./images/add.svg" alt="add a new task" />
         </button>
       </div>
@@ -62,13 +57,7 @@
         />
         <div class="button">
           <button class="button__cancel" type="menu">Cancel</button>
-          <button
-            class="button__apply"
-            type="button"
-            onclick="submitForm(event)"
-          >
-            Apply
-          </button>
+          <button class="button__apply" type="button">Apply</button>
         </div>
       </form>
     </div>

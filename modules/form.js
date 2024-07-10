@@ -1,7 +1,10 @@
 import { page } from './constants.js';
 import { tasks, saveData } from './storage.js';
-import { listEmpty } from './listEmpty.js';
 import { rerender } from './rerender.js';
+import { listEmpty } from './listEmpty.js';
+
+page.form.apply.addEventListener('click', submitForm);
+page.addTaskButton.addEventListener('click', formAddNewTask);
 
 export function formAddNewTask() {
   page.overlay.style.display = 'block';

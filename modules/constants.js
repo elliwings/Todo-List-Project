@@ -4,6 +4,7 @@ export const page = {
   overlay: document.querySelector('.overlay'),
   input: document.querySelector('.input'),
   searchInputBtn: document.querySelector('.input__button'),
+  addTaskButton: document.querySelector('.add-task__button'),
   interaction: {
     buttons: {
       select: document.querySelector('.interaction__select'),
@@ -19,5 +20,6 @@ export const page = {
   },
   taskList: {
     list: document.querySelector('.list'),
+    buttonEditItem: document.querySelector('.item__edit'),
   },
 };

@@ -1,5 +1,6 @@
 import { page } from './constants.js';
 import { listEmpty } from './listEmpty.js';
+import { changeItem, removeItem, toggleTaskMarked } from './actionsWithTask.js';
 
 export function rerender(list) {
   page.taskList.list.innerHTML = ``;
@@ -9,21 +10,34 @@ export function rerender(list) {
     element.innerHTML = `<label>
       <input class="item__checkbox" type="checkbox" ${
         task.marked ? 'checked' : ''
-      } onchange="toggleTaskMarked(${list.indexOf(task)})"/>
+      } />
       <div class="item__fake-checkmark"></div>
       <span class="item__text ${task.marked ? 'marked' : ''}">${
       task.text
     }</span>
     </label>
     <div class="item__change">
-      <button onclick="changeItem(${list.indexOf(task)})">
+      <button class="item__edit">
         <img src="./images/change.svg" alt="change" class="change"/>
       </button>
-      <button onclick="removeItem(${list.indexOf(task)})">
+      <button class="item__delete">
         <img src="./images/remove.svg" alt="remove" class="remove"/>
       </button>
     </div>`;
     page.taskList.list.appendChild(element);
+
+    element.querySelector('.item__edit').addEventListener('click', () => {
+      changeItem(list.indexOf(task));
+    });
+
+    element.querySelector('.item__delete').addEventListener('click', () => {
+      removeItem(list.indexOf(task));
+    });
+
+    element.querySelector('.item__checkbox').addEventListener('click', () => {
+      toggleTaskMarked(list.indexOf(task));
+    });
+
     listEmpty();
   }
 }

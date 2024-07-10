@@ -2,6 +2,8 @@ import { page } from './constants.js';
 import { rerender } from './rerender.js';
 import { tasks } from './storage.js';
 
+page.interaction.buttons.select.addEventListener('change', filterTasks);
+
 page.input.addEventListener('input', (event) => {
   let val = event.target.value.trim().toLowerCase();
   let listItems = document.querySelectorAll('.list li.item');
