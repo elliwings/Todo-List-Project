@@ -1,0 +1,26 @@
+.add-task {
+  position: absolute;
+  bottom: -84px;
+  right: 0;
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+    border: 1px solid $mainPurpleColor;
+    background-color: $mainPurpleColor;
+
+    transition: background-color 0.3s ease;
+
+    &:focus,
+    &:hover {
+      background-color: $hoverAndFocus;
+      outline: 1px solid rgba(108, 99, 255, 0.4);
+    }
+  }
+}

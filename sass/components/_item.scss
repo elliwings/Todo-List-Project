@@ -1,0 +1,101 @@
+.item {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  &::after {
+    position: absolute;
+    bottom: -10px;
+
+    content: '';
+
+    height: 1px;
+    width: 100%;
+
+    border-bottom: 1px solid $mainPurpleColor;
+  }
+
+  &__text {
+    margin-left: 10px;
+    width: 500px;
+    font-size: 20px;
+    &.marked {
+      text-decoration: line-through;
+    }
+  }
+  &__change {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  &__change button {
+    padding: 0;
+
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__change img:first-child:hover,
+  &__change img:first-child:focus {
+    filter: brightness(70%) contrast(100%);
+  }
+
+  &__change img:last-child:hover,
+  &__change img:last-child:focus {
+    filter: brightness(70%) contrast(100%);
+  }
+
+  &__checkbox {
+    opacity: 0;
+
+    height: 26px;
+    width: 26px;
+
+    &:checked + .item__fake-checkmark {
+      background-color: $mainPurpleColor;
+    }
+
+    &:checked + .item__fake-checkmark::before {
+      opacity: 1;
+    }
+  }
+
+  &__fake-checkmark {
+    position: absolute;
+    top: 8px;
+    height: 26px;
+    z-index: 1;
+
+    width: 26px;
+
+    border: 2px solid $mainPurpleColor;
+    border-radius: 4px;
+
+    transition: background 0.1s linear;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      content: '';
+
+      display: block;
+
+      width: 16px;
+      height: 20px;
+
+      background: url(../images/tick.svg);
+      background-size: 16px 16px;
+      opacity: 0;
+      background-repeat: no-repeat;
+    }
+  }
+}

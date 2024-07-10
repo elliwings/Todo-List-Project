@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ToDo</title>
-    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./css/main.min.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Kanit:wght@400;500&display=swap"
       rel="stylesheet"
@@ -31,11 +31,12 @@
             <option value="Complete">Complete</option>
             <option value="Incomplete" selected>Incomplete</option>
           </select>
-          <button class="interaction__theme" onclick="changeTheme()">
+          <button class="interaction__theme">
             <img
               src="./images/dark.svg"
               alt="change theme"
               class="interaction__theme--svg"
+              onclick="changeTheme()"
             />
           </button>
         </div>
@@ -71,6 +72,6 @@
         </div>
       </form>
     </div>
-    <script src="/scripts/app.js"></script>
+    <script type="module" src="./modules/app.js"></script>
   </body>
 </html>

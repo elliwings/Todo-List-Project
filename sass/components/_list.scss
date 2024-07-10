@@ -1,0 +1,13 @@
+.list-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-width: $listContainer;
+}
+.list {
+  padding: 0;
+  list-style-type: none;
+
+  width: 100%;
+}
